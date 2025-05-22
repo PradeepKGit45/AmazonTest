@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	  <parameter name="scenario" value=""></parameter>
+	  <parameter name="type" value="create"></parameter>
+    <classes>
+     <!--  <class name="job.solarwinds"/> -->
+      <!-- <class name="job.Licensing"/>-->
+      <class name="job.salesOrderTest"/>
+      <class name="job.InvoiceTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
