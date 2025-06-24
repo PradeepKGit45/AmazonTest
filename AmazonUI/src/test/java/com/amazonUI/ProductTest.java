@@ -2,9 +2,11 @@ package com.amazonUI;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,8 +38,11 @@ public class ProductTest {
 		ProductPage page = new ProductPage(driver);
 		String productName = page.getProdName();
 		String rating = page.getRating();
+		System.out.println("css " + driver.findElement(By.cssSelector(".a-size-large.product-title-word-break")).getText() );
+		String h2 = driver.findElement(By.xpath("//h2[normalize-space()= 'Product information']")).getText();
+		System.out.println(h2);
 		
-	
+		System.out.println("content " + driver.findElement(By.xpath("(//h2[normalize-space()= 'Product information']//parent::div//child::div[@class='a-row'])[1]")).getText());
 		try
 		{
 			page.clickReviewButton();
@@ -51,6 +56,8 @@ public class ProductTest {
 		
 		Assert.assertEquals(!productName.isEmpty(), true, "Product is different");
 		Assert.assertEquals(!rating.isEmpty(), true, "rating absent");
+		
+		Actions act = new Actions(driver);
 		
 		
 		
