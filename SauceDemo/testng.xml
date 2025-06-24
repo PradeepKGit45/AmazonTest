@@ -1,90 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-
-	<test name="TestNG Practice1" enabled="false">
-
-		<groups>
-			<define name="Weeklyy">
-			
-			<include name="regression"/>
-			</define>
-			
-			<define name="Monthly">
-			<include name="dailyTest"/>
-			
-			</define>
-			<run>
-				
-				<include name="Weeklyy"/>
-				<include name="Monthly"/>
-				<include name="sanity"/>
-				<include name="smoke"></include>
-				
-				
-			</run>
-		</groups>
-		<classes>
-			<class name="Practice.Exercises"/>
-
-
-			
-		
-
-
-		</classes>
-
-	</test>
-
-	<test name="TestNG Practice2" enabled="false">
-
-	  
-		<classes>
-			
-			<class name="Practice.Exercises" />
-			<class name="Practice.HardSoftAssert" />
-			<class name="Practice.parameters">
-				<parameter name="userName" value="Pradeep"></parameter>
-				<methods>
-
-					<include name="parametersTest"></include>
-				</methods>
-			</class>
-
-
-		</classes>
-
-	</test> 
-	<listeners>
-		<listener class-name="Practice.RetryListener"></listener>
-		<listener class-name="Practice.TestListener2"></listener>
-	</listeners>
-	<test name="Login2" enabled="true">
-
-	  
-		<classes>
-			
-			<class name="Practice.login2" />
-			
-		
-
-
-		</classes>
-
-	</test> 
-	
-	<test name="ParametersTest " enabled="false">
-		<classes>
-				<class name="Practice.parameters">
-				<parameter name="userName" value="Pradeep" />
-				<methods>
-
-					<include name="parametersTest"></include>
-				</methods>
-			</class>
-		</classes>
-		
-	</test><!--
-	Test -->
-</suite> <!--
-Suite -->
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Practice.sauceDemo"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
