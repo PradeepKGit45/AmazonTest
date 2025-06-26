@@ -1,4 +1,4 @@
-
+Inside AmazonTest --> SauceDemo
 
 Setup: 
 1. Maven
